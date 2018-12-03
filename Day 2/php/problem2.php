@@ -37,25 +37,3 @@ $end = microtime(true);
 
 echo "Result: " . substr_replace($diff_line, "", $diff_index, 1) . "\n";
 echo "Time to process: " . ($end - $start)*1000 . "ms";
-
-/*
-foreach($lines as $line1) {
-	foreach($lines as $line2) {
-		$diffs = 0;
-		
-		for($i = 0; $i < 26; $i++) {
-			$char1 = $line1[$i];
-			$char2 = $line2[$i];
-			if($char1 != $char2) {
-				if($diffs >= 1) break;
-				$diffs++;
-				$diff_index = $i;
-			}
-		}
-		if($diffs == 1) {
-			$diff_line = $line1;
-			break;
-		}
-	}
-}
-*/
