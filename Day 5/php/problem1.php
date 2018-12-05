@@ -8,16 +8,14 @@ function react($line) {
 	
 	$found = true;
 	while($found) {
-		$match = false;
+		$found = false;
 		foreach($letters as $letter) {
 			$line = str_replace(strtolower($letter) . strtoupper($letter), "", $line, $count1);
-			if($count1 > 0) $match = true;
+			if($count1 > 0) $found = true;
 			
 			$line = str_replace(strtoupper($letter) . strtolower($letter), "", $line, $count2);
-			if($count2 > 0) $match = true;
+			if($count2 > 0) $found = true;
 		}
-		
-		$found = $match;
 	}
 	
 	return $line;
